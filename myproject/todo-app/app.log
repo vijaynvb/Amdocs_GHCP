@@ -1,0 +1,85 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+[32m :: Spring Boot :: [39m              [2m (v3.1.4)[0;39m
+
+[2m2025-09-17T15:06:18.622+05:30[0;39m [32m INFO[0;39m [35m68861[0;39m [2m---[0;39m [2m[           main][0;39m [36mcom.example.todo.TodoAppApplication     [0;39m [2m:[0;39m Starting TodoAppApplication v0.0.1-SNAPSHOT using Java 22.0.2 with PID 68861 (/Users/vijay/Desktop/Amdocs/workspace/myproject/todo-app/target/todo-app-0.0.1-SNAPSHOT.jar started by vijay in /Users/vijay/Desktop/Amdocs/workspace/myproject/todo-app)
+[2m2025-09-17T15:06:18.637+05:30[0;39m [32m INFO[0;39m [35m68861[0;39m [2m---[0;39m [2m[           main][0;39m [36mcom.example.todo.TodoAppApplication     [0;39m [2m:[0;39m No active profile set, falling back to 1 default profile: "default"
+[2m2025-09-17T15:06:24.203+05:30[0;39m [32m INFO[0;39m [35m68861[0;39m [2m---[0;39m [2m[           main][0;39m [36m.s.d.r.c.RepositoryConfigurationDelegate[0;39m [2m:[0;39m Multiple Spring Data modules found, entering strict repository configuration mode
+[2m2025-09-17T15:06:24.222+05:30[0;39m [32m INFO[0;39m [35m68861[0;39m [2m---[0;39m [2m[           main][0;39m [36m.s.d.r.c.RepositoryConfigurationDelegate[0;39m [2m:[0;39m Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2m2025-09-17T15:06:24.548+05:30[0;39m [32m INFO[0;39m [35m68861[0;39m [2m---[0;39m [2m[           main][0;39m [36m.s.d.r.c.RepositoryConfigurationDelegate[0;39m [2m:[0;39m Finished Spring Data repository scanning in 275 ms. Found 1 JPA repository interfaces.
+[2m2025-09-17T15:06:24.799+05:30[0;39m [32m INFO[0;39m [35m68861[0;39m [2m---[0;39m [2m[           main][0;39m [36m.s.d.r.c.RepositoryConfigurationDelegate[0;39m [2m:[0;39m Multiple Spring Data modules found, entering strict repository configuration mode
+[2m2025-09-17T15:06:24.799+05:30[0;39m [32m INFO[0;39m [35m68861[0;39m [2m---[0;39m [2m[           main][0;39m [36m.s.d.r.c.RepositoryConfigurationDelegate[0;39m [2m:[0;39m Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+[2m2025-09-17T15:06:24.820+05:30[0;39m [32m INFO[0;39m [35m68861[0;39m [2m---[0;39m [2m[           main][0;39m [36m.RepositoryConfigurationExtensionSupport[0;39m [2m:[0;39m Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.example.todo.repository.TodoRepository; If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository
+[2m2025-09-17T15:06:24.821+05:30[0;39m [32m INFO[0;39m [35m68861[0;39m [2m---[0;39m [2m[           main][0;39m [36m.s.d.r.c.RepositoryConfigurationDelegate[0;39m [2m:[0;39m Finished Spring Data repository scanning in 21 ms. Found 0 MongoDB repository interfaces.
+[2m2025-09-17T15:06:27.631+05:30[0;39m [32m INFO[0;39m [35m68861[0;39m [2m---[0;39m [2m[           main][0;39m [36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m [2m:[0;39m Tomcat initialized with port(s): 8080 (http)
+[2m2025-09-17T15:06:27.695+05:30[0;39m [32m INFO[0;39m [35m68861[0;39m [2m---[0;39m [2m[           main][0;39m [36mo.apache.catalina.core.StandardService  [0;39m [2m:[0;39m Starting service [Tomcat]
+[2m2025-09-17T15:06:27.696+05:30[0;39m [32m INFO[0;39m [35m68861[0;39m [2m---[0;39m [2m[           main][0;39m [36mo.apache.catalina.core.StandardEngine   [0;39m [2m:[0;39m Starting Servlet engine: [Apache Tomcat/10.1.13]
+[2m2025-09-17T15:06:28.081+05:30[0;39m [32m INFO[0;39m [35m68861[0;39m [2m---[0;39m [2m[           main][0;39m [36mo.a.c.c.C.[Tomcat].[localhost].[/]      [0;39m [2m:[0;39m Initializing Spring embedded WebApplicationContext
+[2m2025-09-17T15:06:28.096+05:30[0;39m [32m INFO[0;39m [35m68861[0;39m [2m---[0;39m [2m[           main][0;39m [36mw.s.c.ServletWebServerApplicationContext[0;39m [2m:[0;39m Root WebApplicationContext: initialization completed in 8937 ms
+[2m2025-09-17T15:06:28.277+05:30[0;39m [32m INFO[0;39m [35m68861[0;39m [2m---[0;39m [2m[           main][0;39m [36mcom.zaxxer.hikari.HikariDataSource      [0;39m [2m:[0;39m HikariPool-1 - Starting...
+[2m2025-09-17T15:06:29.315+05:30[0;39m [32m INFO[0;39m [35m68861[0;39m [2m---[0;39m [2m[           main][0;39m [36mcom.zaxxer.hikari.pool.HikariPool       [0;39m [2m:[0;39m HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:todos user=SA
+[2m2025-09-17T15:06:29.321+05:30[0;39m [32m INFO[0;39m [35m68861[0;39m [2m---[0;39m [2m[           main][0;39m [36mcom.zaxxer.hikari.HikariDataSource      [0;39m [2m:[0;39m HikariPool-1 - Start completed.
+[2m2025-09-17T15:06:29.373+05:30[0;39m [32m INFO[0;39m [35m68861[0;39m [2m---[0;39m [2m[           main][0;39m [36mo.s.b.a.h2.H2ConsoleAutoConfiguration   [0;39m [2m:[0;39m H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:todos'
+[2m2025-09-17T15:06:29.975+05:30[0;39m [32m INFO[0;39m [35m68861[0;39m [2m---[0;39m [2m[           main][0;39m [36mo.hibernate.jpa.internal.util.LogHelper [0;39m [2m:[0;39m HHH000204: Processing PersistenceUnitInfo [name: default]
+[2m2025-09-17T15:06:30.351+05:30[0;39m [32m INFO[0;39m [35m68861[0;39m [2m---[0;39m [2m[           main][0;39m [36morg.hibernate.Version                   [0;39m [2m:[0;39m HHH000412: Hibernate ORM core version 6.2.9.Final
+[2m2025-09-17T15:06:30.357+05:30[0;39m [32m INFO[0;39m [35m68861[0;39m [2m---[0;39m [2m[           main][0;39m [36morg.hibernate.cfg.Environment           [0;39m [2m:[0;39m HHH000406: Using bytecode reflection optimizer
+[2m2025-09-17T15:06:31.030+05:30[0;39m [32m INFO[0;39m [35m68861[0;39m [2m---[0;39m [2m[           main][0;39m [36mo.h.b.i.BytecodeProviderInitiator       [0;39m [2m:[0;39m HHH000021: Bytecode provider name : bytebuddy
+[2m2025-09-17T15:06:31.890+05:30[0;39m [32m INFO[0;39m [35m68861[0;39m [2m---[0;39m [2m[           main][0;39m [36mo.s.o.j.p.SpringPersistenceUnitInfo     [0;39m [2m:[0;39m No LoadTimeWeaver setup: ignoring JPA class transformer
+[2m2025-09-17T15:06:33.146+05:30[0;39m [32m INFO[0;39m [35m68861[0;39m [2m---[0;39m [2m[           main][0;39m [36mo.h.b.i.BytecodeProviderInitiator       [0;39m [2m:[0;39m HHH000021: Bytecode provider name : bytebuddy
+[2m2025-09-17T15:06:35.698+05:30[0;39m [32m INFO[0;39m [35m68861[0;39m [2m---[0;39m [2m[           main][0;39m [36mo.h.e.t.j.p.i.JtaPlatformInitiator      [0;39m [2m:[0;39m HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2m2025-09-17T15:06:35.991+05:30[0;39m [32m INFO[0;39m [35m68861[0;39m [2m---[0;39m [2m[           main][0;39m [36mj.LocalContainerEntityManagerFactoryBean[0;39m [2m:[0;39m Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2m2025-09-17T15:06:37.604+05:30[0;39m [33m WARN[0;39m [35m68861[0;39m [2m---[0;39m [2m[           main][0;39m [36mJpaBaseConfiguration$JpaWebConfiguration[0;39m [2m:[0;39m spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2m2025-09-17T15:06:39.792+05:30[0;39m [32m INFO[0;39m [35m68861[0;39m [2m---[0;39m [2m[           main][0;39m [36morg.mongodb.driver.client               [0;39m [2m:[0;39m MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync|spring-boot", "version": "4.9.1"}, "os": {"type": "Darwin", "name": "Mac OS X", "architecture": "x86_64", "version": "14.3.1"}, "platform": "Java/Oracle Corporation/22.0.2+9-70"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, streamFactoryFactory=null, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, CollectionCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.client.model.mql.ExpressionCodecProvider@37496720, com.mongodb.Jep395RecordCodecProvider@28f9fedd]}, loggerSettings=LoggerSettings{maxDocumentLength=1000}, clusterSettings={hosts=[localhost:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='30000 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, sendBufferSize=0}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, sendBufferSize=0}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=JAVA_LEGACY, serverApi=null, autoEncryptionSettings=null, contextProvider=null}
+[2m2025-09-17T15:06:39.905+05:30[0;39m [32m INFO[0;39m [35m68861[0;39m [2m---[0;39m [2m[localhost:27017][0;39m [36morg.mongodb.driver.cluster              [0;39m [2m:[0;39m Exception in monitor thread while connecting to server localhost:27017
+
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:73) ~[mongodb-driver-core-4.9.1.jar!/:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:204) ~[mongodb-driver-core-4.9.1.jar!/:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:199) ~[mongodb-driver-core-4.9.1.jar!/:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:159) ~[mongodb-driver-core-4.9.1.jar!/:na]
+	at java.base/java.lang.Thread.run(Thread.java:1570) ~[na:na]
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[na:na]
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:682) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592) ~[na:na]
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327) ~[na:na]
+	at java.base/java.net.Socket.connect(Socket.java:752) ~[na:na]
+	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:107) ~[mongodb-driver-core-4.9.1.jar!/:na]
+	at com.mongodb.internal.connection.SocketStream.initializeSocket(SocketStream.java:82) ~[mongodb-driver-core-4.9.1.jar!/:na]
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:68) ~[mongodb-driver-core-4.9.1.jar!/:na]
+	... 4 common frames omitted
+
+[2m2025-09-17T15:06:40.738+05:30[0;39m [32m INFO[0;39m [35m68861[0;39m [2m---[0;39m [2m[           main][0;39m [36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m [2m:[0;39m Tomcat started on port(s): 8080 (http) with context path ''
+[2m2025-09-17T15:06:40.946+05:30[0;39m [32m INFO[0;39m [35m68861[0;39m [2m---[0;39m [2m[           main][0;39m [36mcom.example.todo.TodoAppApplication     [0;39m [2m:[0;39m Started TodoAppApplication in 24.6 seconds (process running for 28.169)
+[2m2025-09-17T15:07:06.519+05:30[0;39m [32m INFO[0;39m [35m68861[0;39m [2m---[0;39m [2m[nio-8080-exec-1][0;39m [36mo.a.c.c.C.[Tomcat].[localhost].[/]      [0;39m [2m:[0;39m Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2m2025-09-17T15:07:06.520+05:30[0;39m [32m INFO[0;39m [35m68861[0;39m [2m---[0;39m [2m[nio-8080-exec-1][0;39m [36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m Initializing Servlet 'dispatcherServlet'
+[2m2025-09-17T15:07:06.522+05:30[0;39m [32m INFO[0;39m [35m68861[0;39m [2m---[0;39m [2m[nio-8080-exec-1][0;39m [36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m Completed initialization in 2 ms
+[2m2025-09-17T15:12:00.183+05:30[0;39m [32m INFO[0;39m [35m68861[0;39m [2m---[0;39m [2m[localhost:27017][0;39m [36morg.mongodb.driver.cluster              [0;39m [2m:[0;39m Exception in monitor thread while connecting to server localhost:27017
+
+com.mongodb.MongoSocketReadException: Prematurely reached end of stream
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:115) ~[mongodb-driver-core-4.9.1.jar!/:na]
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:138) ~[mongodb-driver-core-4.9.1.jar!/:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:735) ~[mongodb-driver-core-4.9.1.jar!/:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:596) ~[mongodb-driver-core-4.9.1.jar!/:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:440) ~[mongodb-driver-core-4.9.1.jar!/:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.sendAndReceive(InternalStreamConnection.java:365) ~[mongodb-driver-core-4.9.1.jar!/:na]
+	at com.mongodb.internal.connection.CommandHelper.sendAndReceive(CommandHelper.java:102) ~[mongodb-driver-core-4.9.1.jar!/:na]
+	at com.mongodb.internal.connection.CommandHelper.executeCommand(CommandHelper.java:49) ~[mongodb-driver-core-4.9.1.jar!/:na]
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.initializeConnectionDescription(InternalStreamConnectionInitializer.java:129) ~[mongodb-driver-core-4.9.1.jar!/:na]
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.startHandshake(InternalStreamConnectionInitializer.java:77) ~[mongodb-driver-core-4.9.1.jar!/:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:206) ~[mongodb-driver-core-4.9.1.jar!/:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:199) ~[mongodb-driver-core-4.9.1.jar!/:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:159) ~[mongodb-driver-core-4.9.1.jar!/:na]
+	at java.base/java.lang.Thread.run(Thread.java:1570) ~[na:na]
+
+[2m2025-09-17T15:12:20.567+05:30[0;39m [32m INFO[0;39m [35m68861[0;39m [2m---[0;39m [2m[localhost:27017][0;39m [36morg.mongodb.driver.cluster              [0;39m [2m:[0;39m Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=25, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=269750398}
+[2m2025-09-17T15:12:28.338+05:30[0;39m [33m WARN[0;39m [35m68861[0;39m [2m---[0;39m [2m[l-1 housekeeper][0;39m [36mcom.zaxxer.hikari.pool.HikariPool       [0;39m [2m:[0;39m HikariPool-1 - Retrograde clock change detected (housekeeper delta=28s863ms), soft-evicting connections from pool.
+[2m2025-09-17T15:12:49.896+05:30[0;39m [32m INFO[0;39m [35m68861[0;39m [2m---[0;39m [2m[ionShutdownHook][0;39m [36mj.LocalContainerEntityManagerFactoryBean[0;39m [2m:[0;39m Closing JPA EntityManagerFactory for persistence unit 'default'
+[2m2025-09-17T15:12:51.148+05:30[0;39m [32m INFO[0;39m [35m68861[0;39m [2m---[0;39m [2m[ionShutdownHook][0;39m [36mcom.zaxxer.hikari.HikariDataSource      [0;39m [2m:[0;39m HikariPool-1 - Shutdown initiated...
+[2m2025-09-17T15:12:51.182+05:30[0;39m [32m INFO[0;39m [35m68861[0;39m [2m---[0;39m [2m[ionShutdownHook][0;39m [36mcom.zaxxer.hikari.HikariDataSource      [0;39m [2m:[0;39m HikariPool-1 - Shutdown completed.

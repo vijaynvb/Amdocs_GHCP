@@ -1,0 +1,38 @@
+
+
+Github copilot -> service
+    1. github online
+    2. github offline
+
+llm -> 
+    gpt-5 -> prompt -> 8000k tokens -> llm -> process the tokens -> response -> x no of tokens 4000k
+                    1token - 16 bit, 32 bit 
+    billing -> x no tokens -> 10000k token per min -> 0.7$
+
+    prompt -> llm [stateless service] -> response
+
+    response + prompt -> llm [stateless service] -> response 
+
+    Github copilot [chat[thread], agent[service]] -> llm
+
+
+    1. Training data -> [model card] [Hippa policy] - sep-24
+    2. Token limitation -> through put 
+    3. how much fine tune you can do -> 
+            1. generative models -> temprature -> 0 -> creativity - less
+                                 -> temprature -> 1 -> creativity - full 
+    
+    1. SLM -> IOT -> 5mb -> CCTV without internet 
+        1. Azure AI Foundry
+        2. AWS sagemaker
+        3. huggingface
+
+RAG -> Retrival -> Augmentation -> Generative 
+
+
+training -> custom model 
+finetuning -> pormpt engg  -> model 
+
+1. kepp the context of the code in workspace rather from llm 
+    1. index -> rag -> 
+    
