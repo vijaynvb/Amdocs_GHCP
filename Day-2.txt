@@ -1,21 +1,15 @@
-
 Hands On:
 
-1. Create a COBOL Application [Developer] - [develop and run the application]
-    1. Use of chat with different modes 
-    2. commands 
-    3. Fix issues [Debugging] 
-    4. Run application on docker image
-    5. write test cases
-    6. write documentation [Depends on project readme.md, swagger, javadoc]
-
-2. Self exploer COBOl Application [New Developer]
+1. Self exploer COBOl Application [New Developer]
     1. Copilot to explain application [Context]
     2. generate images [Architecture, Experted Output, Flow Diagram, UML, Sequence, ER] with use of extenstion
     3. Multi turn prompting 
-    4. generate a prompt to migrate the application to java 
+    4. Run application on docker image
+    5. Write test cases
+    6. Write documentation [Depends on project readme.md, swagger, javadoc]
+    7. generate a prompt to migrate the application to java
 
-3. Migrate COBOL to Java [Migration Developer]
+1. Migrate COBOL to Java [Migration Developer]
     1. Prompt Files
     2. Custom Instructions[CI]
     3. Sharing common migration process to the team 
