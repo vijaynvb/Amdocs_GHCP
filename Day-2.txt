@@ -2,17 +2,36 @@ Hands On:
 
 1. Self exploer COBOl Application [New Developer]
     1. Copilot to explain application [Context]
+        1. Add Context 
+        2. @commands
     2. generate images [Architecture, Experted Output, Flow Diagram, UML, Sequence, ER] with use of extenstion
+        Extensation 
     3. Multi turn prompting 
     4. Run application on docker image
+        1. Multi turn prompting to fix issues - using chat history
     5. Write test cases
     6. Write documentation [Depends on project readme.md, swagger, javadoc]
     7. generate a prompt to migrate the application to java
 
 1. Migrate COBOL to Java [Migration Developer]
+        1. Use maven as a build tool
+        2. clean code practicies [Sonar, Checkstyle, PMD, Findbugs]
+    
     1. Prompt Files
     2. Custom Instructions[CI]
+    
     3. Sharing common migration process to the team 
     4. Fix Issues [Debugging identify common failuers and make it a rule in CI]
     5. Migration documents
 
+Prompt generation: 
+    1. Model 
+    2. Prompt + CI 
+
+Banking domain -> 
+    1. Confluence
+    2. Training of model with Confluence -> GPT-4o+Confluence 
+
+Banking domain -> Copilot -> power bi
+    1. conflunce
+    2. knowledgebase

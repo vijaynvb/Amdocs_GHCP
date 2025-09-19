@@ -1,0 +1,21 @@
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID.    CUSTOMER-BILLING-TEST.
+
+       ENVIRONMENT DIVISION.
+       INPUT-OUTPUT SECTION.
+
+       DATA DIVISION.
+       WORKING-STORAGE SECTION.
+       77  TEST-RESULT      PIC X(10).
+
+       PROCEDURE DIVISION.
+       MAIN-TEST.
+           DISPLAY "Running CUSTOMER-BILLING-TEST".
+           CALL 'CUSTOMER-BILLING' USING TEST-RESULT
+           IF TEST-RESULT = 'PASS'
+               DISPLAY 'TEST PASSED'
+           ELSE
+               DISPLAY 'TEST FAILED'
+           END-IF
+           GOBACK.
+           .
