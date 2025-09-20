@@ -16,7 +16,9 @@
 9. Integration with copilot
 10. github -> Pull Request Management and Peer Review [copilot]
 11. Global Extensions
-12. Security and compliances
+12. Security and compliances 
+    1. its not giving harmful suggestions
+    2. IP code from other repo's 
 
 
 1. Functional prgrmaing 

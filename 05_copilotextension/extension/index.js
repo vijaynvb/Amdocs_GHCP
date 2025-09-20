@@ -4,7 +4,7 @@ import { createTextEvent, createDoneEvent } from '@copilot-extensions/preview-sd
 const server = http.createServer(async (req, res) => {
   if (req.method === 'GET') {
     res.writeHead(200, { 'Content-Type': 'text/plain' });
-    res.end('Hello from Copilot extension server!\n');
+    res.end('Hello from Amdocs Copilot extension server!\n');
   } else {
     res.write(createTextEvent('Hello world from Amdocs!\n'));
     res.write(createTextEvent('This is my first copilot extension'));
