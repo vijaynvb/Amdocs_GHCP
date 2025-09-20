@@ -1,0 +1,13 @@
+
+1. Refactor codebase
+2. Run Java code
+3. Integrate with mongodb database
+4. MongoDB extension
+5. MCP
+6. MongoDB MCP
+7. Figma MCP
+8. Custom MCP server implementation
+9. Integration with copilot
+10. Pull Request Management and Peer Review
+11. Global Extensions
+12. Security and compliances

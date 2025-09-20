@@ -35,3 +35,14 @@ Banking domain ->
 Banking domain -> Copilot -> power bi
     1. conflunce
     2. knowledgebase
+
+
+JCL -> ipc  -> cobol -> binaryfiles -
+
+binary files 
+vsam -> database 
+db2 [ddl, dml] -> postgres [ddl,dml] migration
+
+portan -> 
+
+postgress -> oracle -> 
