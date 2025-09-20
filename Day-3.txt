@@ -19,7 +19,7 @@
 12. Security and compliances
 
 
-Functional prgrmaing 
+1. Functional prgrmaing 
     -> C C++ 
     -> Java 8 
 
@@ -28,19 +28,38 @@ Functional prgrmaing
         Response
     }  
 
-Commanda to execute java code: 
+2. Commanda to execute java code: 
 
-1. build the jar file:
-    mvn clean package spring-boot:repackage
+    1. build the jar file:
+        mvn clean package spring-boot:repackage
 
-2. Run the jar file:
-     java -jar target/java-customer-billing-0.0.1-SNAPSHOT.jar
+    2. Run the jar file:
+        java -jar target/java-customer-billing-0.0.1-SNAPSHOT.jar
 
-3. access the application:
-    Open your web browser and navigate to http://localhost:8080/api/customers to access the application.
+    3. access the application:
+        Open your web browser and navigate to http://localhost:8080/api/customers to access the application.
 
 
-MongoDB Docker Command:
+3. MongoDB Docker Command:
     docker run -d -p 27017:27017 --name mongo mongo:latest 
 
     mongodb://localhost:27017/mongo
+
+4. Java docs [create comments and generate java docs]
+
+5. MCP [Concepts]
+    1. MCP Server: 
+        1. Tool [mongodb, atlasian, jira, confluence]
+        2. Agent [AI Services[Document extraction, speech to text, text to speech, image recognition], Copilot]
+
+6. Remote MCP [Mongodb MCP]
+
+7. Custom MCP implementation [Nodejs]
+
+
+orcastrator -> mcp client -> mcp server -> tool/agent 
+
+add 3+5
+    1. Orcastrator -> brain-llm 
+    2. orcastrator -> 
+        steps -> add [picks the tool] values 

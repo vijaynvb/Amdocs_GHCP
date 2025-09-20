@@ -44,29 +44,44 @@ app.post('/mcp', async (req, res) => {
     });
 
     // Tool: Addition
-    server.tool("add", { a: z.number(), b: z.number() }, async ({ a, b }) => ({
-      content: [{ type: "text", text: String(a + b) }]
-    }));
+    server.tool(
+      "add",
+      "Adds two numbers and returns the result.",
+      { a: z.number(), b: z.number() },
+      async ({ a, b }: { a: number; b: number }) => ({
+        content: [{ type: "text", text: String(a + b) }]
+      })
+    );
 
     // Tool: Energy prices
-    server.tool("get-energy-prices", {}, async () => {
-      const response = await fetch("https://api.awattar.de/v1/marketdata").then(res => res.json());
-      return {
-        content: [
-          { type: "text", text: `Energy prices for tomorrow: ${JSON.stringify(response)}` }
-        ]
-      };
-    });
+    server.tool(
+      "get-energy-prices",
+      "calculate enegry bill.",
+      {},
+      async () => {
+        const response = await fetch("https://api.awattar.de/v1/marketdata").then(res => res.json());
+        return {
+          content: [
+            { type: "text", text: `Energy prices for tomorrow: ${JSON.stringify(response)}` }
+          ]
+        };
+      }
+    );
 
     // Tool: Todos
-    server.tool("get-todos", {}, async () => {
-      const response = await fetch("https://jsonplaceholder.typicode.com/todos").then(res => res.json());
-      return {
-        content: [
-          { type: "text", text: `Todos: ${JSON.stringify(response)}` }
-        ]
-      };
-    });
+    server.tool(
+      "get-todos",
+      "Fetches a list of todos from a public API and returns them as JSON.",
+      {},
+      async () => {
+        const response = await fetch("https://jsonplaceholder.typicode.com/todos").then(res => res.json());
+        return {
+          content: [
+            { type: "text", text: `Todos: ${JSON.stringify(response)}` }
+          ]
+        };
+      }
+    );
 
     // Resource: Greeting
     server.resource(

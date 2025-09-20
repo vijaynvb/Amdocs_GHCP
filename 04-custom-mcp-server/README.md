@@ -126,6 +126,7 @@ The `.vscode/mcp.json` file allows you to register MCP servers for use with comp
 }
 ```
 
+- Start the mcp client displayed in the line no 3 of file mcp.json
 - Place this file in your project's `.vscode` directory.
 - Update the `url` to match your local or deployed MCP server endpoint.
 - Some VS Code extensions (such as Model Context Protocol tools) will automatically detect and let you interact with the registered servers.
