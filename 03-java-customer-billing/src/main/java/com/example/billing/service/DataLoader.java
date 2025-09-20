@@ -13,21 +13,39 @@ import java.math.BigDecimal;
 import java.nio.charset.StandardCharsets;
 import java.util.Optional;
 
+
+/**
+ * Loads customer and billing data from files into the database at application startup.
+ * <p>
+ * This component reads customer and billing information from data files and populates the MongoDB database.
+ */
 @Component
 public class DataLoader {
 
+    /** Repository for customer data. */
     private final CustomerRepository repo;
 
+    /** Resource for the customers data file. */
     @Value("classpath:data/customers.dat")
     private Resource customersFile;
 
+    /** Resource for the billing input data file. */
     @Value("classpath:data/billing-input.dat")
     private Resource billingFile;
 
+    /**
+     * Constructs a DataLoader with the given repository.
+     * @param repo the customer repository
+     */
     public DataLoader(CustomerRepository repo) {
         this.repo = repo;
     }
 
+    /**
+     * Initializes the data loader after bean construction.
+     * Loads customers and processes billing data.
+     * @throws IOException if an I/O error occurs
+     */
     @PostConstruct
     public void init() throws IOException {
         System.out.println("Loading customers from: " + customersFile.getURI());
@@ -38,6 +56,11 @@ public class DataLoader {
         System.out.println("Processing complete. Total billed: " + billed);
     }
 
+    /**
+     * Loads customer data from the customers file into the database.
+     * @return the number of customers loaded
+     * @throws IOException if an I/O error occurs
+     */
     int loadCustomers() throws IOException {
         int count = 0;
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(customersFile.getInputStream(), StandardCharsets.UTF_8))) {
@@ -63,6 +86,11 @@ public class DataLoader {
         return count;
     }
 
+    /**
+     * Processes billing data from the billing file and updates customer balances.
+     * @return the number of customers billed
+     * @throws IOException if an I/O error occurs
+     */
     long processBilling() throws IOException {
         long totalBilled = 0;
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(billingFile.getInputStream(), StandardCharsets.UTF_8))) {

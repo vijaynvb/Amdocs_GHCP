@@ -2,10 +2,26 @@ package com.example.billing.util;
 
 import java.math.BigDecimal;
 
+
+/**
+ * Utility class for decoding IBM/COBOL COMP-3 packed decimal values.
+ * <p>
+ * Provides methods to convert packed decimal byte arrays to {@link BigDecimal}.
+ */
 public final class PackedDecimalUtil {
+
+    /**
+     * Private constructor to prevent instantiation.
+     */
     private PackedDecimalUtil() {}
 
-    // Decode IBM/COBOL COMP-3 packed decimal to BigDecimal with scale
+    /**
+     * Decodes an IBM/COBOL COMP-3 packed decimal byte array to a {@link BigDecimal} with the specified scale.
+     *
+     * @param packed the packed decimal byte array
+     * @param scale the number of decimal places
+     * @return the decoded {@link BigDecimal} value, or {@code BigDecimal.ZERO} if input is null or empty
+     */
     public static BigDecimal decode(byte[] packed, int scale) {
         if (packed == null || packed.length == 0) return BigDecimal.ZERO;
         StringBuilder digits = new StringBuilder(packed.length * 2);
