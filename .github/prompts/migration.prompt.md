@@ -1,69 +1,84 @@
 ---
-description: "Prompt template for migrating a COBOL batch application to Java"
+description: "Prompt for migrating COBOL Customer Billing to Java Spring Boot with H2 database, focusing on packed decimals and alphanumerics."
 mode: agent
-model: GPT-4o
-
+tools: ['edit', 'search', 'new', 'runCommands', 'runTasks', 'usages', 'vscodeAPI', 'problems', 'changes', 'testFailure', 'openSimpleBrowser', 'fetch', 'githubRepo', 'extensions', 'todos', 'search']
+model: GPT-4.1
 ---
 
-Task: Migrate the COBOL batch project at /Users/vijay/Desktop/Amdocs/workspace/Amdocs_GHCP/02-cobol-project to a maintainable Java project (Maven/Gradle), preserving business logic, data semantics, and producing regression-equivalent outputs.
+# COBOL-to-Java Migration Prompt
 
-Project snapshot (important files)
-- src/customer-billing.cob (main COBOL program)
-- src/customer-billing-test.cob
-- src/copybooks/CUSTOMER-RECORD.cbk
-- data/billing-input.dat
-- data/customers.dat
-- Dockerfile, docs/customer_billing.png
+## Project Overview
+This prompt guides you through migrating the COBOL Customer Billing project to a Java Spring Boot application, using an H2 in-memory database. The focus is on tricky data conversions such as packed decimals and alphanumeric fields, and persisting customer and billing data in H2.
 
-Goals
-1. Produce a Java implementation that reproduces COBOL behavior and output for provided data files.
-2. Improve modularity, testability, and observability.
-3. Prepare build, run, and containerization (Docker) steps; include unit and integration tests for regression verification.
+## Migration Scenario
+You are tasked with converting the COBOL program (`customer-billing.cob`) and its data structures (from `CUSTOMER-RECORD.cbk`) to a Java Spring Boot application. The main challenges are:
+- Handling packed decimal fields (COMP-3)
+- Correctly reading and writing fixed-width alphanumeric fields
+- Mapping COBOL data to JPA entities and storing them in H2
 
-Constraints & assumptions
-- Keep file I/O semantics: line-sequential, plain-text input files in data/.
-- Preserve numeric precision and string handling. Flag copybook numeric types (COMP, COMP-3) for special handling.
-- No mainframe-only features assumed (no CICS/JCL). If EBCDIC/packed decimals exist, identify and plan conversions.
-- Business rule note: FIND-CUSTOMER is a stub in COBOL; implementation must be defined/confirmed.
+## Key Data Structures
+- **CUST-ID**: Numeric, 6 digits
+- **CUST-NAME**: Alphanumeric, 30 chars
+- **CUST-ADDR**: Alphanumeric, 50 chars
+- **CUST-BALANCE**: Packed decimal (COMP-3), 7 digits before and 2 after decimal
+- **CUST-STATUS**: Alphanumeric, 1 char
 
-Acceptance criteria / deliverables
-- Maven/Gradle Java project skeleton with src/main/java and src/test/java.
-- Java service/class(es) that implement billing flow: read customers, read billing records, match customer, apply billing rules, update balances, counters.
-- Unit tests that assert same counters and sample outputs as COBOL run against data/*.dat.
-- Integration test or script that runs the Java app and verifies output equals COBOL output for baseline dataset.
-- README with build/run/test instructions and Docker image build/run steps.
+## Migration Steps
+1. **Set Up Spring Boot Project**
+   - Create a new Spring Boot application with dependencies for Spring Data JPA and H2 database.
 
-Migration approach (step-by-step)
-1. Static analysis: parse COBOL source and copybook to extract record layouts, fields, and data types.
-2. Map records to Java POJOs (use BigDecimal for monetary values; LocalDate for dates).
-3. Implement file readers: streaming line-based readers that parse delimited lines into POJOs (handle UNSTRING, delimiters).
-4. Implement services:
-   - CustomerRepository (loads customers.dat into a Map by ID)
-   - BillingProcessor (reads billing-input.dat, performs logic, updates balances, increments counters)
-5. Translate control flow:
-   - PERFORM loops -> for/while methods
-   - READ/AT END -> BufferedReader with EOF handling
-   - COMPUTE/FUNCTION NUMVAL-C -> BigDecimal parsing with locale-safe decimal separators
-6. Implement logging, metrics, and error handling. Replace DISPLAY with structured logging.
-7. Write unit tests for parsers, repository, and processor; add integration test comparing outputs.
-8. Run profile/benchmark for performance; tune I/O and data structures.
+2. **Define JPA Entities**
+   - Map COBOL data structures (from `CUSTOMER-RECORD.cbk`) to Java classes annotated with `@Entity`.
+   - Use appropriate field types for packed decimals and alphanumerics.
 
+3. **Read COBOL Data Files in Java**
+   - Use a Java library (e.g., JRecord) to parse fixed-width and packed decimal fields.
+   - For packed decimals, ensure correct decoding (do not treat as plain integer/float).
+   - For alphanumerics, trim trailing spaces and handle encoding (EBCDIC/ASCII).
+   - Store parsed records in H2 using Spring Data JPA repositories.
 
+4. **Convert Business Logic**
+   - Port the billing logic from COBOL to Java services, ensuring calculations and updates match COBOL results.
+   - Persist updates to H2 database.
 
-Testing & regression
-- Use the existing data/ files as golden input. Capture COBOL-run outputs and define them as expected fixtures.
-- Add unit tests that cover edge cases: missing fields, zero/negative balances, inactive customers.
-- Include a reproducible test that runs the Java app and diffs outputs against COBOL results.
+5. **Validate Output**
+   - Compare Java output with COBOL output.
+   - Write Java unit tests to check for correct decoding, business logic, and database persistence.
 
-Risks & open items
-- Unclear copybook numeric formats (COMP-3 or packed decimals) — must inspect copybook.
-- FIND-CUSTOMER logic not implemented in COBOL: need business owner clarification.
-- Encoding differences (EBCDIC) — detect and handle if present.
-- Non-functional requirements (throughput, concurrency) must be confirmed.
+## Debugging Tips
 
-Acceptance questions for stakeholders (to resolve before coding)
-- Confirm monetary precision and rounding rules.
-- Confirm intended behavior of FIND-CUSTOMER and inactive customer handling.
-- Confirm whether to preserve exact output formatting or only numeric/result parity.
+- If balances are incorrect, check packed decimal decoding and JPA field mapping.
+- If names/addresses look wrong, check for padding, encoding issues, and trimming in entity setters.
+- Use sample data from `customers.dat` and `billing-input.dat` for testing.
+- Use H2 console to inspect persisted data during development.
 
-Use this prompt to drive automated/code-assistant migration tasks, and attach COBOL source + data files for analysis. Run a COBOL-to-Java pilot for the customer-billing.cob flow first, then generalize.
+## Example Java Code Snippet
+```java
+// Example: Spring Boot JPA Entity for Customer
+@Entity
+public class Customer {
+   @Id
+   private Long custId;
+   private String custName;
+   private String custAddr;
+   private BigDecimal custBalance; // decoded from packed decimal
+   private String custStatus;
+   // getters, setters, etc.
+}
+
+// Example: Decoding packed decimal using JRecord
+import net.sf.JRecord.Common.RecordException;
+import net.sf.JRecord.Details.LayoutDetail;
+// ...
+// Use LayoutDetail to define COBOL copybook structure
+// Read and decode packed decimal fields
+```
+
+## Acceptance Criteria
+- Spring Boot application reads and processes COBOL data files
+- Data is correctly persisted and updated in H2 database
+- Output matches COBOL results
+- All tricky fields (packed decimal, alphanumerics) are handled accurately
+
+---
+_Use this prompt to guide your migration and debugging process for COBOL-to-Java conversions in the Customer Billing project._

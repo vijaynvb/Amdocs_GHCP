@@ -1,4 +1,5 @@
 you are doing a migration activity from cobol to java.
+Donot do changes in data input folder files
 
 Key COBOL-to-Java mapping guidance (examples)
 - PIC X(n) -> String (trim/length rules)

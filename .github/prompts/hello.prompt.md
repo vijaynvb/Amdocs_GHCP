@@ -2,7 +2,7 @@
 description: "Generate a simple Java class with a main method"
 mode: agent
 model: GPT-4.1
-tools: ['changes', 'codebase', 'editFiles', 'problems', 'search']
+tools: ['editFiles', 'search', 'problems', 'changes', 'todos', 'search']
 ---
 
 Write a basic Java program that:
