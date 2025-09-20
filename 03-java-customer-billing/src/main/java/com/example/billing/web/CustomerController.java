@@ -29,7 +29,7 @@ public class CustomerController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Customer> byId(@PathVariable("id") long id) {
+    public ResponseEntity<Customer> byId(@PathVariable("id") String id) {
         return repo.findById(id).map(ResponseEntity::ok).orElse(ResponseEntity.notFound().build());
     }
 

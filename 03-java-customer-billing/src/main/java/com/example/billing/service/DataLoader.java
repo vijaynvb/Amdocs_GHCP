@@ -2,14 +2,9 @@ package com.example.billing.service;
 
 import com.example.billing.domain.Customer;
 import com.example.billing.repo.CustomerRepository;
-import org.apache.commons.csv.CSVFormat;
-import org.apache.commons.csv.CSVParser;
-import org.apache.commons.csv.CSVRecord;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Component;
-import org.springframework.transaction.annotation.Transactional;
-
 import jakarta.annotation.PostConstruct;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -34,7 +29,6 @@ public class DataLoader {
     }
 
     @PostConstruct
-    @Transactional
     public void init() throws IOException {
         System.out.println("Loading customers from: " + customersFile.getURI());
         int customers = loadCustomers();
@@ -51,8 +45,8 @@ public class DataLoader {
             while ((line = reader.readLine()) != null) {
                 if (line.isBlank()) continue;
                 Customer c = new Customer();
-                String idStr = line.substring(0, 6);
-                c.setCustId(Long.parseLong(idStr));
+                String idStr = line.substring(0, 6).trim();
+                c.setCustId(idStr);
                 c.setCustName(line.substring(6, 36));
                 c.setCustAddr(line.substring(36, 86));
                 c.setCustStatus(line.length() > 91 ? line.substring(91, 92) : "A");
@@ -80,16 +74,14 @@ public class DataLoader {
                 String idStr = parts[0].trim();
                 String amtStr = parts[1].trim();
                 if (idStr.isEmpty()) continue;
-                long id;
                 BigDecimal amt;
                 try {
-                    id = Long.parseLong(idStr);
                     amt = new BigDecimal(amtStr);
                 } catch (NumberFormatException e) {
                     // Log or skip invalid input
                     continue;
                 }
-                Optional<Customer> optCustomer = repo.findById(id);
+                Optional<Customer> optCustomer = repo.findById(idStr);
                 if (optCustomer.isPresent()) {
                     Customer customer = optCustomer.get();
                     String status = customer.getCustStatus();
