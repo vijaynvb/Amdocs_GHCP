@@ -1,7 +1,0 @@
-/Users/vijay/Desktop/Amdocs/workspace/Amdocs_GHCP/03-java-customer-billing/src/main/java/com/example/billing/Application.java
-/Users/vijay/Desktop/Amdocs/workspace/Amdocs_GHCP/03-java-customer-billing/src/main/java/com/example/billing/domain/Customer.java
-/Users/vijay/Desktop/Amdocs/workspace/Amdocs_GHCP/03-java-customer-billing/src/main/java/com/example/billing/repo/CustomerRepository.java
-/Users/vijay/Desktop/Amdocs/workspace/Amdocs_GHCP/03-java-customer-billing/src/main/java/com/example/billing/service/DataLoader.java
-/Users/vijay/Desktop/Amdocs/workspace/Amdocs_GHCP/03-java-customer-billing/src/main/java/com/example/billing/util/PackedDecimalUtil.java
-/Users/vijay/Desktop/Amdocs/workspace/Amdocs_GHCP/03-java-customer-billing/src/main/java/com/example/billing/web/CustomerController.java
-/Users/vijay/Desktop/Amdocs/workspace/Amdocs_GHCP/03-java-customer-billing/src/main/java/com/example/billing/web/dto/CustomerBalanceDto.java
